@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HAKIM FIRDAUS - Biodata</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:wght@400;700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:wght@300;400;500;600">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    :root {
+        --bg-soft: #FDFBF7;
+        --text-body: #3f0b23;
+        --accent: #F0066E;
+        --dark: #3a022d;
+        --light: #FDFBF7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Montserrat", sans-serif;
+        background: var(--bg-soft);
+        color: var(--text-body);
+        line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Cinzel", serif;
+        color: var(--accent);
+        letter-spacing: 1.5px;
+        font-weight: 700;
+    }
+
+    a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    a:hover { color: #F0069E; }
+
+    .w3-top, .w3-bar {
+        background-color: var(--dark) !important;
+        z-index: 9999;          /* make sure it's on top */
+    }
+    .w3-bar-item {
+        color: var(--light) !important;
+        transition: all 0.25s;
+    }
+    .w3-bar-item:hover {
+        background-color: var(--accent) !important;
+        transform: scale(1.04);
+    }
+
+    .hero {
+        background: linear-gradient(rgba(140,20,65,0.08), rgba(140,20,65,0.08)), var(--bg-soft);
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 20px 60px;   /* ← KEY FIX: push title down */
+    }
+    .hero h1 {
+        font-size: 4.8rem;
+        margin: 0;
+    }
+
+    .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        overflow: hidden;
+        margin: 2rem 0;
+    }
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+    }
+
+    .accent-border {
+        border-left: 6px solid var(--accent);
+        padding-left: 24px;
+    }
+
+    footer {
+        background: var(--dark);
+        color: var(--light);
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .content-padding {
+        padding: 40px 16px 100px;   /* reduced top here since hero already has padding */
+    }
+</style>
+</head>
+<body>
+
+<div class="w3-top">
+    <div class="w3-bar w3-card">
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="biodata.html" class="w3-bar-item w3-button w3-padding-large">Biodata</a>
+        <a href="education.html" class="w3-bar-item w3-button w3-padding-large">Education</a>
+        <a href="experience.html" class="w3-bar-item w3-button w3-padding-large">Experience</a>
+        <a href="family.html" class="w3-bar-item w3-button w3-padding-large">Family</a>
+        <a href="gallery.html" class="w3-bar-item w3-button w3-padding-large">Gallery</a>
+    </div>
+</div>
+
+<header class="hero">
+    <div>
+        <h1>Biodata</h1>
+    </div>
+</header>
+
+<div class="w3-content content-padding" style="max-width:1100px">
+
+    <div class="card accent-border">
+        <div class="w3-container w3-padding-32">
+            <h3>Personal Details</h3>
+            <hr style="border-top:1px dashed var(--accent); margin:1.2rem 0;">
+            <p><strong>Full Name:</strong> HAKIM FIRDAUS BIN ASRI</p>
+            <p><strong>Date of Birth:</strong> 22 November 2005</p>
+            <p><strong>Campus:</strong> UiTM Rembau Campus</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="w3-container w3-padding-32">
+            <h3>Academic Information</h3>
+            <hr style="border-top:1px dashed var(--accent); margin:1.2rem 0;">
+            <p><strong>Faculty:</strong> COLLEGE OF COMPUTER STUDIES, INFORMATICS AND MATHEMATICS</p>
+            <p><strong>Program:</strong> DIPLOMA IN INFORMATION MANAGEMENT</p>
+            <p><strong>Study Mode:</strong> Full-Time</p>
+            <p><strong>Semester:</strong> 5</p>
+            <p><strong>Group:</strong> A</p>
+        </div>
+    </div>
+
+    <div class="card accent-border">
+        <div class="w3-container w3-padding-32">
+            <h3>Contact</h3>
+            <hr style="border-top:1px dashed var(--accent); margin:1.2rem 0;">
+            <p><i class="fa fa-envelope"></i> 2023872452@isiswa.uitm.edu.my</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p> 2026 Hakim Firdaus – UiTM Student Project</p>
+</footer>
+
+</body>
+</html>

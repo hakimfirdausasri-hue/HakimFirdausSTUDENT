@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HAKIM FIRDAUS – Gallery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal website of Hakim Firdaus, UiTM student">
+    <meta name="author" content="Hakim Firdaus">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:wght@400;700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:wght@300;400;500;600">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        :root {
+            --color-1: #FDFBF7;      /* bg-soft - eggshell background */
+            --color-2: #3f0b23;      /* text-body - deep burgundy text */
+            --color-3: #F0066E;      /* accent - cherry red for headings/links */
+            --color-4: #3a022d;      /* dark - nav/footer/sidebar background */
+            --color-5: #FDFBF7;      /* light - text on dark backgrounds */
+            --accent-hover: #F0069E; /* lighter red hover variant */
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            background-color: var(--color-1);
+            color: var(--color-2);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Cinzel", serif;
+            color: var(--color-3);
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--color-3);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        .w3-top .w3-bar {
+            background-color: var(--color-4) !important;
+            z-index: 1000;
+        }
+        .w3-bar-item {
+            color: var(--color-5) !important;
+            transition: all 0.3s ease;
+        }
+        .w3-bar-item:hover {
+            background-color: var(--color-3) !important;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(58,2,45,0.08), rgba(58,2,45,0.08)), var(--color-1);
+            min-height: 70vh;
+            display: flex;
+            align individualized;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 0.3em;
+            line-height: 0.95;
+        }
+        .hero h4 {
+            font-size: 1.8rem;
+            margin: 0.4em 0 1em;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+        }
+
+        .accent-border {
+            border-left: 6px solid var(--color-3);
+            padding-left: 24px;
+        }
+
+        .content-padding {
+            padding-top: 120px; /* safety against nav overlap */
+        }
+
+        footer {
+            background-color: var(--color-4);
+            color: var(--color-5);
+            text-align: center;
+            padding: 2.5rem 1rem;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: rgba(240,6,110,0.15);
+            margin: 3rem 0;
+        }
+
+        /* Gallery-specific styles - exactly as you had originally */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: all 0.35s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.16);
+        }
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(58,2,45,0.9), transparent);
+            color: white;
+            padding: 2.5rem 1.2rem 1.2rem;
+            text-align: center;
+            font-size: 1.15rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .caption { opacity: 1; }
+
+        /* Force clearfix */
+        .w3-row:after,
+        .w3-row-padding:after,
+        .w3-clear:after,
+        .w3-container:after,
+        .w3-panel:after,
+        .w3-bar:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body onload="startTime()">
+
+<div class="w3-top">
+    <div class="w3-bar w3-card">
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="biodata.html" class="w3-bar-item w3-button w3-padding-large">Biodata</a>
+        <a href="education.html" class="w3-bar-item w3-button w3-padding-large">Education</a>
+        <a href="experience.html" class="w3-bar-item w3-button w3-padding-large">Experience</a>
+        <a href="family.html" class="w3-bar-item w3-button w3-padding-large">Family</a>
+        <a href="gallery.html" class="w3-bar-item w3-button w3-padding-large">Gallery</a>
+    </div>
+</div>
+
+<header class="hero content-padding">
+    <div class="w3-container">
+        <h1><b>HAKIM FIRDAUS</b></h1>
+        <h4>Diploma in Information Management – UiTM Rembau</h4>
+        <p class="w3-large" style="margin: 1.5rem 0;">
+            Semester 5 | COLLEGE OF COMPUTER STUDIES, INFORMATICS AND MATHEMATICS
+        </p>
+        <p id="clock" class="w3-xlarge" style="margin-top:1.5rem;"></p>
+    </div>
+</header>
+
+<div class="w3-content" style="max-width:2600px">
+    <div class="w3-row w3-padding w3-border">
+        <div class="w3-col l8 s12">
+            <div class="w3-container w3-white w3-margin w3-padding-large card accent-border">
+                <h2>Visual Chronicles</h2>
+                <hr style="border-top:1px dashed var(--color-3); margin:1.5rem 0;">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/Gal1.jpeg" alt="Trip with Family">
+                        <div class="caption">Trip with Family</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Gal2.jpeg" alt="Housemate Hangout">
+                        <div class="caption">Housemate Hangout</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Gal3.jpeg" alt="Class Study">
+                        <div class="caption">Class Study</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Gal4.jpeg" alt="Campus Life">
+                        <div class="caption">Campus Life</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Gal5.jpeg" alt="Shots and Edit">
+                        <div class="caption">Shots and Edit</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/hisphoto.jpg" alt="Childhood footage">
+                        <div class="caption">Childhood footage</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<footer>
+    <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom">
+        <i class="fa fa-arrow-up w3-margin-right"></i>To the top
+    </a>
+    <p>© 2026 Hakim Firdaus | UiTM Student Project</p>
+</footer>
+
+<script>
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i;}
+        return i;
+    }
+</script>
+
+</body>
+</html>
